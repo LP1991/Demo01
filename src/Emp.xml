@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BaseEmp>
+	<files>exe</files>
+	<files>txt</files>
+	<files>bat</files>
+	<files>html</files>
+	<files>java</files>
+	<files>properties</files>
+</BaseEmp>

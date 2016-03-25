@@ -1,0 +1,36 @@
+<script type="text/javascript">
+
+   
+function Run(command)  
+{     
+  
+   try     
+   {     
+		var xml = new ActiveXObject("WScript.Shell");
+		xml.async = false;
+		alert(12);
+	   }     
+   catch(ex)  
+   {  
+       alert(ex)
+		// 打开telnet命令行窗口
+		var win = window.open('telnet://' + '192.168.14.169');
+
+		// 关闭当前页面（不能立即关闭，否则telnet命令行窗口出不来）
+		
+		setTimeout(function closeThisWin() {
+			win.close();
+		}, 2000);
+
+		  
+   }     
+}     
+
+
+
+
+
+</script>
+<a onclick="Run('telnet 192.168.14.169')" href="#" mce_href="#">Run Telnet</a>
+<br />
+<a onclick="Run('msconfig')" href="#" mce_href="#">Run MSconfig</a>

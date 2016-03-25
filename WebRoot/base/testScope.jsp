@@ -1,0 +1,37 @@
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    
+    <title>My JSP 'testWindow.jsp' starting page</title>
+    
+	 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script type="text/javascript" src="../../ext/adapter/ext/ext-base.js"></script>
+	<script type="text/javascript" src="../../ext/ext-all-debug.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../ext/resources/css/ext-all.css">	
+  </head>
+  
+  <body>
+  	<script type="text/javascript">
+  		function doSuccess(response){
+  			this.dom.value = response.responseText;
+  		}
+  		Ext.onReady(function(){
+			Ext.get("button").on('click',function(){
+				var text = Ext.get("text");
+				Ext.lib.Ajax.request(
+					'post',
+					'data.jsp',
+					//{success:doSuccess,scope:text},
+					{success:doSuccess.createDelegate(text)},
+					'text='+encodeURIComponent(text.dom.value)
+				);
+			});
+  		});	
+  	</script>
+  	<input id="text" />
+  	<input id="button" type="button" value="提交" />
+  </body>
+</html>

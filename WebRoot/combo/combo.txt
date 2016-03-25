@@ -1,0 +1,8 @@
+[
+	["value1","text1"],
+	["value2","text2"],
+	["value3","text3"],
+	["value4","text4"],
+	["value5","text5"],
+	["value6","text6"],
+]
